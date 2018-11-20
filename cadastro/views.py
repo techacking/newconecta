@@ -28,6 +28,14 @@ class usuarioList(Autentica, ListView):
     model = Usuario
     template_name = 'usuario/usuario_list.html'
 
+class perfilList(Autentica, ListView):
+    model = Perfil
+    template_name = 'perfil/perfil_list.html'
+
+class clienteList(Autentica, ListView):
+    model = Cliente
+    template_name = 'cliente/cliente_list.html'
+
 # ----------------------- CREATE ---------------------------
 
 class usuarioCreate(Autentica, CreateView):
@@ -35,6 +43,18 @@ class usuarioCreate(Autentica, CreateView):
     fields = ['nome', 'login', 'senha', 'perfil', ]
     template_name = 'usuario/usuario_create.html'
     success_url = reverse_lazy('usuario_list')
+
+class perfilCreate(Autentica, CreateView):
+    model = Perfil
+    fields = ['perfil', ]
+    template_name = 'perfil/perfil_create.html'
+    success_url = reverse_lazy('perfil_list')
+
+class clienteCreate(Autentica, CreateView):
+    model = Cliente
+    fields = ['nome', 'cnpj', 'inscricaoestadual', 'email', ]
+    template_name = 'cliente/cliente_create.html'
+    success_url = reverse_lazy('cliente_list')
 
 # ------------------------ UPDATE --------------------------
 
@@ -44,11 +64,33 @@ class usuarioUpdate(Autentica, UpdateView):
     template_name = 'usuario/usuario_update.html'
     success_url = reverse_lazy('usuario_list')
 
+class perfilUpdate(Autentica, UpdateView):
+    model = Perfil
+    fields = ['perfil', ]
+    template_name = 'perfil/perfil_update.html'
+    success_url = reverse_lazy('perfil_list')
+
+class clienteUpdate(Autentica, UpdateView):
+    model = Cliente
+    fields = ['nome', 'cnpj', 'inscricaoestadual', 'email', ]
+    template_name = 'cliente/cliente_update.html'
+    success_url = reverse_lazy('cliente_list')
+
 # ------------------------- DELETE -------------------------
 
 class usuarioDelete(Autentica, DeleteView):
     model = Usuario
     template_name = 'usuario/usuario_delete.html'
     success_url = reverse_lazy('usuario_list')
+
+class perfilDelete(Autentica, DeleteView):
+    model = Perfil
+    template_name = 'perfil/perfil_delete.html'
+    success_url = reverse_lazy('perfil_list')
+
+class clienteDelete(Autentica, DeleteView):
+    model = Cliente
+    template_name = 'cliente/cliente_delete.html'
+    success_url = reverse_lazy('cliente_list')
 
 

@@ -19,6 +19,30 @@
                   </div>
                 </div>
               </div>
+              <div class="col-lg-4 pt-2">
+                <div class="card">
+                  <div class="card-body shadow">
+                    <h5 class="card-title">Perfil</h5>
+                    <p class="card-text">Cadastrar novos Perfils </p>
+                    <div class="offset-lg-6">
+                        <a href="{% url 'perfil_list' %}" class="btn btn-secondary">lista</a>
+                        <a href="{% url 'perfil_create' %}" class="btn btn-success">novo</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 pt-2">
+                <div class="card">
+                  <div class="card-body shadow">
+                    <h5 class="card-title">Clientes</h5>
+                    <p class="card-text">Cadastrar novos Clientes</p>
+                    <div class="offset-lg-6">
+                        <a href="{% url 'cliente_list' %}" class="btn btn-secondary">lista</a>
+                        <a href="{% url 'cliente_create' %}" class="btn btn-success">novo</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
         </section>
