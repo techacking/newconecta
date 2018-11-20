@@ -27,3 +27,15 @@ class perfilForm(ModelForm):
             'perfil',
 
         ]
+
+class ContatoForm(ModelForm):
+    class Meta:
+        model = Contato
+        fields = [
+            'cliente', 'ddd', 'telefone', 'tipo'
+                  ]
+
+class SalaForm(ModelForm):
+    class Meta:
+        model = Sala
+        fields = ['nome', 'capacidade', 'status', 'tipo', ]
