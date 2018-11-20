@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+
+
+    <div class="row m-3">
+        <div class="offset-md-4 table-responsive-lg" style="margin-top: 40px">
+            <div class="calendar-wrapper rounded">
+
+                <div id="divCal" class="rounded"></div>
+                <div class="row p-2">
+                    <button id="btnPrevv" class="shadow-lg offset-1 col-3 btn btn-light" type="button">Prev</button>
+                    <button id="btnNextt" class="shadow-lg offset-4 col-3 btn btn-success" type="button">Next</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
