@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'bootstrapform',
     'home',
     'cadastro',
+    'pedido',
 ]
 
 MIDDLEWARE = [
