@@ -73,7 +73,7 @@ table {
   color:@calendar-color;
 }
 td {
-  height:48px;
+  height:10px;
   text-align:center;
   vertical-align:middle;
   border-right:1px solid @calendar-border;

@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'agenda.apps.AgendaConfig',
     'bootstrapform',
     'home',
-    'cadastro',
     'pedido',
+    'cadastro',
+
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,11 @@ STATICFILES_DIRS = [
     'statics',
 
 ]
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'smartbusinessmanagementnew@gmail.com '
+EMAIL_HOST_PASSWORD = 'alocardi123'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+

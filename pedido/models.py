@@ -1,16 +1,32 @@
-from django.db import models
 from cadastro.models import *
+from django.db import models
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
+class Orcamento(models.Model):
+    cliente = models.ForeignKey(Cliente, blank=False, null=False, on_delete=models.CASCADE)
+    dataevento = models.DateTimeField()
+    sala = models.ForeignKey(Sala, blank=False, null=False, on_delete=models.CASCADE)
+    montagem = models.TextField()
+
+    def save(self, *args, **kwargs):
+        super(Orcamento, self).save(*args, **kwargs)
+
+        data = {'Orcamento': self.cliente}
+        plain_text = render_to_string('orcamento/emails/neworcamento.txt', data)
+        html_email = render_to_string('orcamento/emails/neworcamento.html', data)
+
+        send_mail(
+                'Novo Usuario',
+                plain_text,
+                'smartbusinessmanagementnew@gmail.com',
+                ['cesar-pimenta@live.com'],
+                html_message= html_email,
+                fail_silently=False,
+        )
 
 class Pedido(models.Model):
-    status = models.SmallIntegerField()
-    datapedido = models.DateTimeField()
-    dataagenda = models.DateTimeField()
-    cliente = models.ForeignKey(Cliente, null=True, blank=False, on_delete=models.CASCADE)
-    sala = models.ForeignKey(Sala, null=True, blank=False, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.status
+    orcamento = models.ForeignKey(Orcamento, blank=False, null=False, on_delete=models.CASCADE)
 
 
 class Pagamento(models.Model):
@@ -26,7 +42,4 @@ class Pagamento(models.Model):
         return self.status
 
 
-class Orcamento(models.Model):
-    valor = models.FloatField()
-    datageracao = models.DateTimeField()
-    pedido = models.ForeignKey(Pedido, blank=False, null=False, on_delete=models.CASCADE)
+

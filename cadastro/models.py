@@ -1,7 +1,7 @@
 from django.db import models
+from django.core.mail import send_mail
 
 # Create your models here.
-
 
 class TipoSala(models.Model):
     tipo = models.CharField(max_length=15)
@@ -25,7 +25,6 @@ class Usuario(models.Model):
     def __str__(self):
         return self.nome
 
-
 class Cliente(models.Model):
     nome = models.CharField(max_length=40)
     cnpj = models.CharField(max_length=30)
@@ -45,7 +44,6 @@ class Condicao(models.Model):
 class Sala(models.Model):
     nome = models.CharField(max_length=30)
     capacidade = models.IntegerField()
-
     status = models.ForeignKey(Condicao, null=True, blank=True, on_delete=models.CASCADE)
     tipo = models.ManyToManyField(TipoSala)
 
@@ -66,7 +64,6 @@ class Contato(models.Model):
     ddd = models.SmallIntegerField()
     telefone = models.IntegerField()
     tipo = models.CharField(max_length=20)
-
     cliente = models.ForeignKey(Cliente, null=True, blank=False, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -81,7 +78,6 @@ class Endereco(models.Model):
     logradouro = models.CharField(max_length=20)
     cep = models.IntegerField()
     bairro = models.CharField(max_length=50)
-
     cliente = models.ForeignKey(Cliente, null=True, blank=False, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -91,7 +87,6 @@ class Endereco(models.Model):
 class MediaCliente(models.Model):
     site = models.CharField(max_length=40, null=True)
     foto = models.ImageField(upload_to='clients_photos', null=True, blank=True)
-
     cliente = models.ForeignKey(Cliente, null=True, blank=False, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -110,7 +105,6 @@ class Boleto(models.Model):
     valor = models.FloatField()
     taxa = models.FloatField()
     codigobarra = models.TextField()
-
     cliente = models.ForeignKey(Cliente, blank=False, null=False, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -123,3 +117,27 @@ class Item(models.Model):
     def __str__(self):
         return self.nome
 
+class Reserva(models.Model):
+    entrada = models.DateTimeField()
+    saida = models.DateTimeField()
+    descricaoReserva = models.TextField()
+
+    def __str__(self):
+        return self.entrada
+class Evento(models.Model):
+    titulo = models.TextField()
+    tipo = models.TextField()
+    item = models.ManyToManyField(Item)
+    reserva = models.ForeignKey(Reserva, blank=False, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.titulo
+
+class Arquivo(models.Model):
+    caminho = models.TextField()
+    titulo = models.CharField(max_length=30)
+    formato = models.CharField(max_length=10)
+    evento = models.ForeignKey(Evento, blank=None, null=False, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.titulo

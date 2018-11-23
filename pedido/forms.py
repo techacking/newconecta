@@ -6,7 +6,7 @@ class PedidoForm(ModelForm):
         model = Pedido
         fields = [
 
-            'status', 'datapedido', 'daraagenda', 'cliente', 'sala',
+            'orcamento',
 
         ]
 
@@ -24,6 +24,6 @@ class OrcamentoForm(ModelForm):
         model = Orcamento
         fields = [
 
-            'valor', 'datageracao', 'pedido',
+            'cliente', 'dataevento', 'sala', 'montagem',
 
         ]
