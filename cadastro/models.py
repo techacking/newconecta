@@ -124,6 +124,7 @@ class Reserva(models.Model):
 
     def __str__(self):
         return self.entrada
+
 class Evento(models.Model):
     titulo = models.TextField()
     tipo = models.TextField()
