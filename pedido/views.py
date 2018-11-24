@@ -29,6 +29,10 @@ class orcamentoList(Autenticapedido, ListView):
     model = Orcamento
     template_name = 'orcamento/orcamento_list.html'
 
+class pedidoList(Autenticapedido, ListView):
+    model = Pedido
+    template_name = 'pedido/pedido_list.html'
+
 # ----------------------- CREATE ---------------------------
 
 class orcamentoCreate(Autenticapedido, CreateView):
@@ -36,6 +40,12 @@ class orcamentoCreate(Autenticapedido, CreateView):
     fields = ['cliente', 'dataevento', 'sala', 'montagem', ]
     template_name = 'orcamento/orcamento_create.html'
     success_url = reverse_lazy('orcamento_list')
+
+class pedidoCreate(Autenticapedido, CreateView):
+    model = Pedido
+    fields = ['cliente', 'dataevento', 'sala', 'montagem', ]
+    template_name = 'pedido/pedido_create.html'
+    success_url = reverse_lazy('pedido_list')
 
 # ------------------------ UPDATE --------------------------
 
@@ -45,11 +55,22 @@ class orcamentoUpdate(Autenticapedido, UpdateView):
     template_name = 'orcamento/orcamento_update.html'
     success_url = reverse_lazy('orcamento_list')
 
+class pedidoUpdate(Autenticapedido, UpdateView):
+    model = Pedido
+    fields = ['orcamento']
+    template_name = 'pedido/pedido_update.html'
+    success_url = reverse_lazy('perfil_list')
+
 # ------------------------- DELETE -------------------------
 
 class orcamentoDelete(Autenticapedido, DeleteView):
     model = Orcamento
     template_name = 'orcamento/orcamento_delete.html'
     success_url = reverse_lazy('orcamento_list')
+
+class pedidoDelete(Autenticapedido, DeleteView):
+    model = Pedido
+    template_name = 'pedido/pedido_delete.html'
+    success_url = reverse_lazy('pedido_list')
 
 
