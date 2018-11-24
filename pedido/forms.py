@@ -24,6 +24,6 @@ class OrcamentoForm(ModelForm):
         model = Orcamento
         fields = [
 
-            'cliente', 'dataevento', 'sala', 'montagem',
+
 
         ]

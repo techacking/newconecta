@@ -20,4 +20,9 @@ urlpatterns = [
     path('cliente_update/<int:pk>/', clienteUpdate.as_view(), name='cliente_update'),
     path('cliente_delete/<int:pk>/', clienteDelete.as_view(), name='cliente_delete'),
 
+    path('tiposala_list/', tiposalaList.as_view(), name='tiposala_list'),
+    path('tiposala_create/', tiposalaCreate.as_view(), name='tiposala_create'),
+    path('tiposala_update/<int:pk>/', tiposalaUpdate.as_view(), name='tiposala_update'),
+    path('tiposala_delete/<int:pk>/', tiposalaDelete.as_view(), name='tiposala_delete'),
+
 ]

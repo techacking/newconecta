@@ -39,3 +39,8 @@ class SalaForm(ModelForm):
     class Meta:
         model = Sala
         fields = ['nome', 'capacidade', 'status', 'tipo', ]
+
+class TipoSala(ModelForm):
+    class Meta:
+        model = TipoSala
+        fields = ['tipo', ]

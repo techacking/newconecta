@@ -35,6 +35,11 @@ class clienteList(Autenticacad, ListView):
     model = Cliente
     template_name = 'cliente/cliente_list.html'
 
+class tiposalaList(Autenticacad, ListView):
+    model = TipoSala
+    template_name = 'tiposala/tiposala_list.html'
+
+
 # ----------------------- CREATE ---------------------------
 
 class usuarioCreate(Autenticacad, CreateView):
@@ -51,9 +56,15 @@ class perfilCreate(Autenticacad, CreateView):
 
 class clienteCreate(Autenticacad, CreateView):
     model = Cliente
-    fields = ['nome', 'cnpj', 'inscricaoestadual', 'emails', ]
+    fields = ['nome', 'cnpj', 'inscricaoestadual', 'email', ]
     template_name = 'cliente/cliente_create.html'
     success_url = reverse_lazy('cliente_list')
+
+class tiposalaCreate(Autenticacad, CreateView):
+    model = TipoSala
+    fields = ['tipo', ]
+    template_name = 'tiposala/tiposala_create.html'
+    success_url = reverse_lazy('tiposala_list.html')
 
 # ------------------------ UPDATE --------------------------
 
@@ -71,9 +82,15 @@ class perfilUpdate(Autenticacad, UpdateView):
 
 class clienteUpdate(Autenticacad, UpdateView):
     model = Cliente
-    fields = ['nome', 'cnpj', 'inscricaoestadual', 'emails', ]
+    fields = ['nome', 'cnpj', 'inscricaoestadual', 'email', ]
     template_name = 'cliente/cliente_update.html'
     success_url = reverse_lazy('cliente_list')
+
+class tiposalaUpdate(Autenticacad, UpdateView):
+    model = TipoSala
+    fields = ['tipo', ]
+    template_name = 'tiposala/tiposala_list.html'
+    success_url = reverse_lazy('tiposala_list')
 
 # ------------------------- DELETE -------------------------
 
@@ -91,5 +108,10 @@ class clienteDelete(Autenticacad, DeleteView):
     model = Cliente
     template_name = 'cliente/cliente_delete.html'
     success_url = reverse_lazy('cliente_list')
+
+class tiposalaDelete(Autenticacad, DeleteView):
+    model = TipoSala
+    template_name = 'tiposala/tiposala_list.html'
+    success_url = reverse_lazy('tiposala_list')
 
 
