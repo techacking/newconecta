@@ -2,17 +2,36 @@
 {% load bootstrap %}
 
 {% block main %}
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#exemplomodal').modal('show');
+        })
+    </script>
     <main class="container mt-5">
-        <section class="rounded border shadow pt-4 pr-4 pl-4 pb-4 col-md-10 offset-md-1">
-            <h3> Tem certeza que deseja deletar o cliente {{ cliente.nome }} ?</h3>
-            <article class="text-center">
-                    <form method="POST" ENCTYPE="multipart/form-data">
-                        {% csrf_token %}
-                        <a class="btn btn-secondary mt-5" href="{% url 'cliente_list' %}">voltar</a>
-                        <button class="btn btn-danger mt-5" type="submit"> Delete </button>
-                    </form>
-            </article>
+        <section>
+                <div class="modal fade bd-example-modal-sm" id="exemplomodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-success" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Cliente deletado!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <article class="text-center">
+                                    <form method="POST" ENCTYPE="multipart/form-data">
+                                        {% csrf_token %}
+                                            <a href="{% url 'cliente_list' %}">
+                                                <button class="btn btn-success mt-2 col-md-4" type="submit">OK
+                                                </button>
+                                            </a>
+                                    </form>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </section>
     </main>
 

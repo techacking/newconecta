@@ -50,8 +50,9 @@ Cal.prototype.previousMonth = function() {
   this.showcurr();
 };
 
+// **************************************************************************
+//Escreve os eventos
 
-    //Escreve os eventos
     function mostrarEventos(y, m, d, listEvents) {
         var passo;
         var events = []
@@ -66,7 +67,7 @@ Cal.prototype.previousMonth = function() {
             var diaF = datahoraI[2].substring(0, 2);
             if (anoI <= y.toString() && y.toString() <= anoF && mesI <= (parseInt(m, 10) + 1).toString() && (parseInt(m, 10) + 1).toString() <= mesF && diaI <= d.toString() && d.toString() <= diaF) {
                 if (events.length < 3){
-                    events.push('<tr><td><button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#testModalEvent">'+listEvents[passo]['title']+'</button></td></tr>');
+                    events.push('<tr><td><a class="btn btn-success btn-block" data-toggle="modal" data-target="#testModalEvent">'+listEvents[passo]['title']+'</a></td></tr>');
                 } else if (events.length == 3) {
                     events[events.length - 1] = '<tr><td><button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#testModalEvent">+'+(events.length - 2).toString()+' Eventos</button></td></tr>';
                 }
@@ -78,6 +79,7 @@ Cal.prototype.previousMonth = function() {
         return events.join('') + '</table>';
     }
 
+// **************************************************************************
 
 // Show current month
 Cal.prototype.showcurr = function() {
@@ -96,18 +98,18 @@ Cal.prototype.showMonth = function(y, m) {
   , lastDayOfLastMonth = m == 0 ? new Date(y-1, 11, 0).getDate() : new Date(y, m, 0).getDate();
 
 
-  var html = '<table class="shadow">';
+  var html = '<table class="">';
 
   // Write selected month and year
-  html += '<thead><tr>';
-  html += '<td colspan="7" class="rounded bg-success text-white">' + this.Months[m] + ' ' + y + '</td>';
+  html += '<thead class=""><tr>';
+  html += '<td colspan="7" class="rounded-top text-white" style="background: #59CAB8">' + this.Months[m] + ' ' + y + '</td>';
   html += '</tr></thead>';
 
 
   // Write the header of the days of the week
   html += '<tr class="days">';
   for(var i=0; i < this.DaysOfWeek.length;i++) {
-    html += '<td>' + this.DaysOfWeek[i] + '</td>';
+    html += '<td style="color: #59CAB8">' + this.DaysOfWeek[i] + '</td>';
   }
   html += '</tr>';
 
@@ -127,7 +129,7 @@ Cal.prototype.showMonth = function(y, m) {
       html += '<tr>';
       var k = lastDayOfLastMonth - firstDayOfMonth+1;
       for(var j=0; j < firstDayOfMonth; j++) {
-        html += '<td class=""><button type="button" class="btn btn-success disabled" data-toggle="modal" data-target="">'+ k + '</button></td>';
+        html += '<td class="text-white rounded p-sm-1" ><div class="btn w-100 disabled" style="background: #59CAB8">'+ k + '</div></td>';
         k++;
       }
     }
@@ -136,11 +138,11 @@ Cal.prototype.showMonth = function(y, m) {
     var chk = new Date();
     var chkY = chk.getFullYear();
     var chkM = chk.getMonth();
-      if (chkY == this.currYear && chkM == this.currMonth && i == this.currDay) {
-          html += '<td class="rounded bg-success text-white"><table><tr><td class="daysNumber">' + i + '</td></tr>' + mostrarEventos(this.currYear, this.currMonth, i, eventos) + '</a></td>';
-      }else {
-        html += '<td><a role="button" class="btn btn-outline-success btn-block" data-toggle="modal" href="#exampleModalCenter"><table><tr><td class="daysNumber">' + i + '</td></tr>' + mostrarEventos(this.currYear,this.currMonth,i,eventos) + '</a></td>';
-      }
+    if (chkY == this.currYear && chkM == this.currMonth && i == this.currDay) {
+      html += '<td class="p-sm-1"><a class="btn text-white w-100" style="background: #59CAB8" data-toggle="modal" data-target="#exampleModalCenter">' + i + '</a></td>';
+    } else {
+      html += '<td class="p-sm-1 today"><a class="btn border-secondary w-100" style="color: #59CAB8" data-toggle="modal" data-target="#exampleModalCenter">' + i + '</a></td>';
+    }
     // If Saturday, closes the row
     if ( dow == 6 ) {
       html += '</tr>';
@@ -150,7 +152,7 @@ Cal.prototype.showMonth = function(y, m) {
     else if ( i == lastDateOfMonth ) {
       var k=1;
       for(dow; dow < 6; dow++) {
-        html += '<td class=""><button type="button" class="btn btn-success disabled" data-toggle="modal" data-target="">' + k + '</button></td>';
+        html += '<td class="text-white rounded p-sm-1"><div class="btn w-100 disabled" style="background: #59CAB8">' + k + '</></td>';
         k++;
       }
     }

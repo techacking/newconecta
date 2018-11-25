@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load bootstrap %}
+
+{% block main %}
+
+    <section class="container mt-2 mb-5">
+        <nav class="navbar">
+          <a class="navbar-brand"></a>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Digite sua busca" aria-label="Search" id="pesquisa" name="pesquisa">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
+          </form>
+        </nav>
+        <div class="rounded border shadow pt-4 pr-4 pl-4 table-responsive-lg bg-white">
+            <table class="table table-hover table-lg">
+                <thead>
+                    <tr>
+                        <th>
+                            Título
+                        </th>
+                        <th>
+                            Tipo
+                        </th>
+                        <th>
+                            Item
+                        </th>
+                        <th>
+                            Reserva
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for Evento in object_list %}
+                            <tr>
+                                <td>
+                                    {{ Evento.titulo }}
+                                </td>
+                                <td>
+                                    {{ Evento.tipo }}
+                                </td>
+                                <td>
+                                    {{ Evento.item }}
+                                </td>
+                                <td>
+                                    {{ Evento.reserva }}
+                                </td>
+
+                                <td>
+                                    <div>
+                                        <a href="{% url 'evento_update' Endereco.id %}">Alterar</a>
+                                        <a href="{% url 'evento_delete' Endereco.id %}">Deletar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-4 offset-md-10">
+            <a class="btn btn-success shadow" href="{% url 'evento_create' %}">Novo</a>
+            <a class="btn btn-secondary shadow" href="{% url 'cadastro' %}">Volta</a>
+        </div>
+    </section>
+
+{% endblock %}

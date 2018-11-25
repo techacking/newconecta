@@ -40,6 +40,12 @@ a {
   text-decoration:none;
 }
 
+.day {
+
+  width: 400px !important;
+
+}
+
 .max(@maxWidth;
   @rules) {
     @media only screen and (max-width: @maxWidth) {
@@ -85,6 +91,7 @@ td.not-current {
 }
 td.normal {}
 td.today {
+  width: 500px !important;
   font-weight:700;
   color:@calendar-standout;
   font-size:1.5em;
@@ -92,7 +99,7 @@ td.today {
 thead td {
   border:none;
   color:@calendar-standout;
-  text-transform:uppercase;
+
   font-size:1.5em;
 }
 #btnPrev {
@@ -105,6 +112,7 @@ thead td {
   }
 }
 #btnNext {
+  background-color: #59CAB8;
   float:right;
   margin-bottom:20px;
   &:after {
