@@ -1,1 +1,1 @@
-web: gunicorn newconecta.wsgi --lacho quog-file -
+web: gunicorn newconecta.wsgi --log-file -
