@@ -138,9 +138,9 @@ LOGIN_REDIRECT_URL = 'home'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATICFILES_DIRS = [
+    'statics',
+]
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'smartbusinessmanagementnew@gmail.com '
