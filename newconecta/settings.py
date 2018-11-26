@@ -138,10 +138,9 @@ LOGIN_REDIRECT_URL = 'home'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = [
-    'statics',
-
-]
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'smartbusinessmanagementnew@gmail.com '
@@ -152,4 +151,12 @@ EMAIL_USE_TLS = True
 BOOTSTRAP4 = {
     'include_jquery': True,
 }
+
+MIDDLEWARE_CLASSES = (
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+)
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
