@@ -6,7 +6,7 @@ from django.views.generic.edit import CreateView
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.db.models import Sum, F, FloatField, Max, Avg
+from django.db.models import *
 from pedido.models import *
 
 # Create your views here.
@@ -18,4 +18,6 @@ class Autentica(LoginRequiredMixin):
 
 class Home(Autentica, View):
     def get(self, request):
-        return render(request,'home/home.html')
+        data = {}
+        data['total'] = Orcamento.objects.todosorcamento()
+        return render(request, 'home/home.html', data)

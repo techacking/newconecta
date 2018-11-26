@@ -2,6 +2,7 @@ from cadastro.models import *
 from django.db import models
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+from home.managers import *
 
 class Orcamento(models.Model):
     cliente = models.ForeignKey(Cliente, blank=False, null=False, on_delete=models.CASCADE)
@@ -9,21 +10,27 @@ class Orcamento(models.Model):
     sala = models.ForeignKey(Sala, blank=False, null=False, on_delete=models.CASCADE)
     montagem = models.TextField()
 
+    objects = OrcamentoManager()
+
     def __str__(self):
         return self.cliente.nome
 
     def save(self, *args, **kwargs):
         super(Orcamento, self).save(*args, **kwargs)
 
-        data = {'Orcamento': self.cliente.nome}
+        data = {
+            'cliente': self.cliente.nome,
+            'sala': self.sala,
+            'quantidade': self.sala.capacidade
+        }
         plain_text = render_to_string('orcamento/emails/neworcamento.txt', data)
         html_email = render_to_string('orcamento/emails/neworcamento.html', data)
-
+        dest = self.cliente.email
         send_mail(
                 'Novo Usuario',
                 plain_text,
                 'smartbusinessmanagementnew@gmail.com',
-                ['cesar-pimenta@live.com'],
+                [dest],
                 html_message=html_email,
                 fail_silently=False,
         )
