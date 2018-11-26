@@ -38,7 +38,7 @@ class pedidoList(Autenticapedido, ListView):
 
 class orcamentoCreate(Autenticapedido, CreateView):
     model = Orcamento
-    fields = ['cliente', 'dataevento', 'sala', 'montagem', ]
+    fields = ['cliente', 'dataevento', 'sala', 'montagem', 'valor', ]
     template_name = 'orcamento/orcamento_create.html'
     success_url = reverse_lazy('orcamento_list')
     def get_form(self):
@@ -61,7 +61,7 @@ class pedidoCreate(Autenticapedido, CreateView):
 
 class orcamentoUpdate(Autenticapedido, UpdateView):
     model = Orcamento
-    fields = ['cliente', 'dataevento', 'sala', 'montagem', ]
+    fields = ['cliente', 'dataevento', 'sala', 'montagem', 'valor', ]
     template_name = 'orcamento/orcamento_update.html'
     success_url = reverse_lazy('orcamento_list')
     def get_form(self):

@@ -41,7 +41,7 @@ table {
 </table>
 </table>
 
-<p><b>Aos Cuidados,</b></p>
+<p><b>Aos Cuidados de,</b></p>
 <p><b>{{ cliente }}</b></p>
 <p><b></b></p>
 <table>
@@ -49,9 +49,9 @@ table {
     <td></td>
     <td></td>
 </table>
-<p>Considerando o interesse da <b>Zurich Santander</b> em realizar evento no Centro Educacional UniAbrapp,
+<p>Considerando o interesse da <b>{{ cliente }}</b> em realizar evento no Centro Educacional UniAbrapp,
 encaminhamos proposta para análise.</p>
-<h3>1. Locação de salas:</h3>
+<h3>1. Locação de sala:</h3>
 
 <table border="1px">
   <tr style="background:#006666; color:white">
@@ -66,9 +66,9 @@ encaminhamos proposta para análise.</p>
     <td>{{ dataevento }} </td>
     <td>08h00 – 18h00</td>
     <td>{{ sala }}</td>
-    <td>Escolar Mesas Redondas</td>
+    <td>{{ montagem }}</td>
     <td>{{ quantidade }}</td>
-    <td style="color:blue">R$ 1.100,00+ 5% ISS</td>
+    <td style="color:blue">{{ valor }}</td>
   </tr>
   <tr style="background:#006666; color:white; text-align:center">
     <td colspan="6"><p>TOTAL DE DIÁRIAS com 5% ISS (SALA)</p>

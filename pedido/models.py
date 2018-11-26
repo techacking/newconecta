@@ -5,11 +5,21 @@ from django.template.loader import render_to_string
 from home.managers import *
 from django.urls import reverse
 
+class Tabelapreco(models.Model):
+    tipovalor = models.CharField(max_length=40)
+    valor = models.DecimalField(max_digits=8, decimal_places=2, default=0)
+    sala = models.ForeignKey(Sala, blank=False, null=False, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.tipovalor
+
+
 class Orcamento(models.Model):
     cliente = models.ForeignKey(Cliente, blank=False, null=False, on_delete=models.CASCADE)
     dataevento = models.DateTimeField('Data para Orcamento')
     sala = models.ForeignKey(Sala, blank=False, null=False, on_delete=models.CASCADE)
     montagem = models.TextField()
+    valor = models.ForeignKey(Tabelapreco, blank=True, null=True, on_delete=models.CASCADE)
 
     objects = OrcamentoManager()
 
@@ -25,6 +35,8 @@ class Orcamento(models.Model):
             'quantidade': self.sala.capacidade,
             'idorcamento': self.id,
             'dataevento': self.dataevento,
+            'montagem':self.montagem,
+            'valor':self.valor.valor,
         }
         plain_text = render_to_string('orcamento/emails/neworcamento.txt', data)
         html_email = render_to_string('orcamento/emails/neworcamento.html', data)
@@ -57,6 +69,3 @@ class Pagamento(models.Model):
 
     def __str__(self):
         return self.status
-
-
-
