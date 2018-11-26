@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16249d80-07db-46c4-b965-36242e27ca10" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/migrations/0002_auto_20181124_0103.py" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/migrations/0002_auto_20181124_0103.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/migrations/0003_auto_20181126_1346.py" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/migrations/0003_auto_20181126_1346.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cadastro/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cadastro/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/managers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +79,7 @@
           <entry key="env" value="1" />
           <entry key="gif" value="1" />
           <entry key="gitignore" value="2" />
-          <entry key="html" value="125" />
+          <entry key="html" value="126" />
           <entry key="jpg" value="2" />
           <entry key="js" value="15" />
           <entry key="map" value="1" />
@@ -117,7 +94,7 @@
         <counts>
           <entry key=".env file" value="1" />
           <entry key="CSS" value="27" />
-          <entry key="HTML" value="125" />
+          <entry key="HTML" value="126" />
           <entry key="Image" value="6" />
           <entry key="JavaScript" value="15" />
           <entry key="PLAIN_TEXT" value="10" />
@@ -132,7 +109,7 @@
           <entry key="css" value="116" />
           <entry key="dummy" value="1" />
           <entry key="gitignore" value="46" />
-          <entry key="html" value="2821" />
+          <entry key="html" value="2855" />
           <entry key="js" value="1292" />
           <entry key="py" value="6158" />
           <entry key="text" value="59" />
@@ -143,7 +120,7 @@
         <counts>
           <entry key="CSS" value="116" />
           <entry key="DjangoUrlPath" value="2" />
-          <entry key="HTML" value="2835" />
+          <entry key="HTML" value="2869" />
           <entry key="JavaScript" value="1276" />
           <entry key="PLAIN_TEXT" value="147" />
           <entry key="Python" value="6158" />
@@ -154,23 +131,21 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cadastro/templates/item/item_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="131" column="58" lean-forward="true" selection-start-line="131" selection-start-column="58" selection-end-line="131" selection-end-column="58" />
+            <state relative-caret-position="136">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1710" />
           </provider>
         </entry>
       </file>
@@ -204,11 +179,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home/templates/home/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="105" column="43" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
+            <state relative-caret-position="372">
+              <caret line="140" column="24" selection-start-line="140" selection-start-column="24" selection-end-line="140" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#!!top" expanded="true" />
@@ -337,8 +312,8 @@
         <option value="$PROJECT_DIR$/agenda/views.py" />
         <option value="$PROJECT_DIR$/statics/js/agenda2.js" />
         <option value="$PROJECT_DIR$/agenda/templates/entre/agenda.html" />
-        <option value="$PROJECT_DIR$/home/templates/home/home.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/home/templates/home/home.html" />
       </list>
     </option>
   </component>
@@ -394,15 +369,7 @@
             <path>
               <item name="newconecta" type="b2602c69:ProjectViewProjectNode" />
               <item name="newconecta" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="newconecta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="newconecta" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -498,12 +465,12 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15234375" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15234375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49934897" visible="true" weight="0.32967034" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49934897" weight="0.32967034" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -512,7 +479,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.50065106" side_tool="true" visible="true" weight="0.32967034" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.50065106" side_tool="true" visible="true" weight="0.32967034" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32998565" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -545,16 +512,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/Projetos/newconecta/venv/Lib/site-packages/django/views/generic/edit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2754">
-          <caret line="174" column="6" selection-start-line="174" selection-start-column="6" selection-end-line="174" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/statics/media/bg_1.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -893,25 +850,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1710" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/home/templates/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="105" column="43" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
+        <state relative-caret-position="372">
+          <caret line="140" column="24" selection-start-line="140" selection-start-column="24" selection-end-line="140" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#1;n#section#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="131" column="58" lean-forward="true" selection-start-line="131" selection-start-column="58" selection-end-line="131" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
