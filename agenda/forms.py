@@ -1,12 +1,6 @@
+from django import forms
 from django.forms import ModelForm
 from .models import *
+from bootstrap_datepicker_plus import DatePickerInput
 
 
-class EntreForm(ModelForm):
-    class Meta:
-        model = Entre
-        fields = [
-
-            'name', 'date', 'descricao', 'criacao',
-
-        ]

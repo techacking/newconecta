@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'agenda.apps.AgendaConfig',
+    'bootstrap4',
     'bootstrapform',
+    'bootstrap_datepicker_plus',
     'home',
     'pedido',
     'cadastro',
@@ -147,4 +149,7 @@ EMAIL_HOST_PASSWORD = 'alocardi123'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}
 
