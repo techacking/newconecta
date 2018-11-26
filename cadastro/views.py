@@ -101,7 +101,7 @@ class perfilCreate(Autenticacad, CreateView):
 
 class clienteCreate(Autenticacad, CreateView):
     model = Cliente
-    fields = ['nome', 'cnpj', 'inscricaoestadual', 'email', ]
+    fields = '__all__'
     template_name = 'cliente/cliente_create.html'
     success_url = reverse_lazy('cliente_list')
 
@@ -195,7 +195,7 @@ class perfilUpdate(Autenticacad, UpdateView):
 
 class clienteUpdate(Autenticacad, UpdateView):
     model = Cliente
-    fields = ['nome', 'cnpj', 'inscricaoestadual', 'email', ]
+    fields = '__all__'
     template_name = 'cliente/cliente_update.html'
     success_url = reverse_lazy('cliente_list')
 

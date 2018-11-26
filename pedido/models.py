@@ -3,10 +3,11 @@ from django.db import models
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from home.managers import *
+from django.urls import reverse
 
 class Orcamento(models.Model):
     cliente = models.ForeignKey(Cliente, blank=False, null=False, on_delete=models.CASCADE)
-    dataevento = models.DateTimeField()
+    dataevento = models.DateTimeField('Data para Orcamento')
     sala = models.ForeignKey(Sala, blank=False, null=False, on_delete=models.CASCADE)
     montagem = models.TextField()
 
@@ -21,13 +22,15 @@ class Orcamento(models.Model):
         data = {
             'cliente': self.cliente.nome,
             'sala': self.sala,
-            'quantidade': self.sala.capacidade
+            'quantidade': self.sala.capacidade,
+            'idorcamento': self.id,
+            'dataevento': self.dataevento,
         }
         plain_text = render_to_string('orcamento/emails/neworcamento.txt', data)
         html_email = render_to_string('orcamento/emails/neworcamento.html', data)
         dest = self.cliente.email
         send_mail(
-                'Novo Usuario',
+                'Orcamento - Conecta',
                 plain_text,
                 'smartbusinessmanagementnew@gmail.com',
                 [dest],
@@ -35,6 +38,9 @@ class Orcamento(models.Model):
                 fail_silently=False,
         )
         render_to_string(template_name='orcamento/orcamento_list.html')
+
+    def get_absolute_url(self):
+        return reverse('orcamento_list')
 
 class Pedido(models.Model):
     orcamento = models.ForeignKey(Orcamento, blank=False, null=False, on_delete=models.CASCADE)

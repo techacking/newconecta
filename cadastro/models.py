@@ -27,9 +27,9 @@ class Usuario(models.Model):
 
 class Cliente(models.Model):
     nome = models.CharField(max_length=40)
-    cnpj = models.CharField(max_length=30)
-    inscricaoestadual = models.CharField(max_length=30)
-    email = models.EmailField(max_length=254, blank=False)
+    cnpj = models.CharField('CNPJ', max_length=30)
+    inscricaoestadual = models.CharField('Inscrição Estadual', max_length=30)
+    email = models.EmailField('E-mail para contato', max_length=254, blank=False)
 
     def __str__(self):
         return self.nome
@@ -45,10 +45,11 @@ class Sala(models.Model):
     nome = models.CharField(max_length=30)
     capacidade = models.IntegerField()
     status = models.ForeignKey(Condicao, null=True, blank=True, on_delete=models.CASCADE)
-    tipo = models.ManyToManyField(TipoSala)
+    tipo = models.ManyToManyField(TipoSala,)
 
     def __str__(self):
         return self.nome
+
 
 
 class SalaDisponibilidade(models.Model):

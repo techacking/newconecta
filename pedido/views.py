@@ -13,6 +13,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import *
 from django.contrib.auth.mixins import LoginRequiredMixin
+from bootstrap_datepicker_plus import DateTimePickerInput
 
 
 @login_required
@@ -40,6 +41,15 @@ class orcamentoCreate(Autenticapedido, CreateView):
     fields = ['cliente', 'dataevento', 'sala', 'montagem', ]
     template_name = 'orcamento/orcamento_create.html'
     success_url = reverse_lazy('orcamento_list')
+    def get_form(self):
+        form = super().get_form()
+        form.fields['dataevento'].widget = DateTimePickerInput(
+            options={
+                "format": "DD/MM/YYYY",
+                "locale": "pt",
+            }
+        )
+        return form
 
 class pedidoCreate(Autenticapedido, CreateView):
     model = Pedido
@@ -54,6 +64,15 @@ class orcamentoUpdate(Autenticapedido, UpdateView):
     fields = ['cliente', 'dataevento', 'sala', 'montagem', ]
     template_name = 'orcamento/orcamento_update.html'
     success_url = reverse_lazy('orcamento_list')
+    def get_form(self):
+        form = super().get_form()
+        form.fields['dataevento'].widget = DateTimePickerInput(
+            options={
+                "format": "DD/MM/YYYY",
+                "locale": "pt",
+            }
+        )
+        return form
 
 class pedidoUpdate(Autenticapedido, UpdateView):
     model = Pedido
