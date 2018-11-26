@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'agenda.apps.AgendaConfig',
-    'bootstrap4',
     'bootstrapform',
     'bootstrap_datepicker_plus',
     'home',
