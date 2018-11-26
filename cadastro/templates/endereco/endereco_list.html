@@ -4,85 +4,130 @@
 
 {% block main %}
 
-    <section class="container mt-2 mb-5">
-        <nav class="navbar">
-          <a class="navbar-brand"></a>
-          <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Digite sua busca" aria-label="Search" id="pesquisa" name="pesquisa">
-            <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
-          </form>
-        </nav>
-        <div class="rounded border shadow pt-4 pr-4 pl-4 table-responsive-lg bg-white">
-            <table class="table table-hover table-lg">
-                <thead>
-                    <tr>
-                        <th>
-                            Endereço
-                        </th>
-                        <th>
-                            Número
-                        </th>
-                        <th>
-                            Cidade
-                        </th>
-                        <th>
-                            Estado
-                        </th>
-                        <th>
-                            Logradouro
-                        </th>
-                        <th>
-                            CEP
-                        </th>
-                        <th>
-                            Bairro
-                        </th>
-                        <th>
-                            Cliente
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for Endereco in object_list %}
-                            <tr>
-                                <td>
-                                    {{ Endereco.endereco}}
-                                </td>
-                                <td>
-                                    {{ Endereco.numero }}
-                                </td>
-                                <td>
-                                    {{ Endereco.cidade }}
-                                </td>
-                                <td>
-                                    {{ Endereco.estado }}
-                                </td>
-                                <td>
-                                    {{ Endereco.logradouro }}
-                                </td>
-                                <td>
-                                    {{ Endereco.cep }}
-                                </td>
-                                <td>
-                                    {{ Endereco.bairro }}
-                                </td>
-                                <td>
-                                    {{ Endereco.cliente }}
-                                </td>
-                                <td>
-                                    <div>
-                                        <a href="{% url 'endereco_update' Endereco.id %}">Alterar</a>
-                                        <a href="{% url 'endereco_delete' Endereco.id %}">Deletar</a>
+    <section class="container-fluid mt-4">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card shadow mb-5 bg-white rounded border-secondary">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-6" style="font-size: 20px">
+                                <i class="fa fa-align-justify"></i> Endereço dos Clientes
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Digite sua busca" aria-label="Search" aria-describedby="button-addon2" id="button-addon2" name="pesquisa">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
                                     </div>
-                                </td>
-                            </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        <div class="mt-4 offset-md-10">
-            <a class="btn btn-success shadow" href="{% url 'endereco_create' %}">Novo</a>
-            <a class="btn btn-secondary shadow" href="{% url 'cadastro' %}">Volta</a>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                    <a class="btn btn-success shadow col-md-5 icon-user-follow" href="{% url 'endereco_create' %}"></a>
+                                    <a class="btn btn-secondary shadow col-md-5 icon-arrow-left" href="{% url 'cliente_list' %}"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Endereço
+                                    </th>
+                                    <th>
+                                        Número
+                                    </th>
+                                    <th>
+                                        Cidade
+                                    </th>
+                                    <th>
+                                        Estado
+                                    </th>
+                                    <th>
+                                        Logradouro
+                                    </th>
+                                    <th>
+                                        CEP
+                                    </th>
+                                    <th>
+                                        Bairro
+                                    </th>
+                                    <th>
+                                        Cliente
+                                    </th>
+                                    <th>
+                                        Ações
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for Endereco in object_list %}
+                                    <tr>
+                                        <td>
+                                            {{ Endereco.endereco}}
+                                        </td>
+                                        <td>
+                                            {{ Endereco.numero }}
+                                        </td>
+                                        <td>
+                                            {{ Endereco.cidade }}
+                                        </td>
+                                        <td>
+                                            {{ Endereco.estado }}
+                                        </td>
+                                        <td>
+                                            {{ Endereco.logradouro }}
+                                        </td>
+                                        <td>
+                                            {{ Endereco.cep }}
+                                        </td>
+                                        <td>
+                                            {{ Endereco.bairro }}
+                                        </td>
+                                        <td>
+                                            {{ Endereco.cliente }}
+                                        </td>
+                                        <td>
+                                        <div>
+                                            <a href="{% url 'endereco_update' Endereco.id%}" style="text-decoration: none">
+                                                <button type="button" class="btn btn-primary col-md-3.25 fa fa-edit" >
+                                                </button>
+                                            </a>
+                                            <button type="button" class="btn btn-danger col-md-3.5 offset-md-1 fa fa-trash-o" data-toggle="modal" data-target="#exampleModal">
+                                            </button>
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-danger" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Deletar</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-target="#dangerModal">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                    <div class="modal-body">
+                                                        Tem certeza que deseja deletar o cliente {{ Endereco.nome }} ?
+                                                    </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                            <a href="{% url 'endereco_delete' Endereco.id %}">
+                                                                <button type="button" class="btn btn-danger" >
+                                                                Excluir
+                                                                </button>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

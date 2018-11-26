@@ -53,31 +53,36 @@ Cal.prototype.previousMonth = function() {
 // **************************************************************************
 //Escreve os eventos
 
-    function mostrarEventos(y, m, d, listEvents) {
+    /*function mostrarEventos(y, m, d, listEvents, hoje) {
         var passo;
-        var events = []
+        var redAlert;
+        var days;
+        var dataDay;
         for (passo = 0; passo < listEvents.length; passo++) {
             var datahoraI = listEvents[passo]['startdate'].split("-");
             var anoI = datahoraI[0];
             var mesI = datahoraI[1];
             var diaI = datahoraI[2].substring(0, 2);
-            var datahoraF = listEvents[passo]['enddate'].split("-");
+            /*var datahoraF = listEvents[passo]['enddate'].split("-");
             var anoF = datahoraI[0];
             var mesF = datahoraI[1];
             var diaF = datahoraI[2].substring(0, 2);
-            if (anoI <= y.toString() && y.toString() <= anoF && mesI <= (parseInt(m, 10) + 1).toString() && (parseInt(m, 10) + 1).toString() <= mesF && diaI <= d.toString() && d.toString() <= diaF) {
-                if (events.length < 3){
-                    events.push('<tr><td><a class="btn btn-success btn-block" data-toggle="modal" data-target="#testModalEvent">'+listEvents[passo]['title']+'</a></td></tr>');
-                } else if (events.length == 3) {
-                    events[events.length - 1] = '<tr><td><button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#testModalEvent">+'+(events.length - 2).toString()+' Eventos</button></td></tr>';
-                }
+            if (anoI == y.toString() && mesI == (m + 1).toString() && diaI == d.toString()) {
+                redAlert = '<img src="" alt="AlertEvent Icon">';
             }
         }
-        while (events.length < 3){
-            events.push('<tr><td><button type="button" class="invisible btn btn-primary btn-block">ghgjhgjhg</button></td></tr>');
+        if (redAlert == undefined){
+            redAlert = '';
         }
-        return events.join('') + '</table>';
-    }
+        dataDay = y.toString() + '-' + m.toString() + '-' + d.toString();
+        if (hoje == true){
+            days = '<td class="p-sm-1"><a class="btn text-white w-100" style="background: #59CAB8" data-toggle="modal" data-target="#exampleModalCenter" data-date="' + dataDay + '" >' + d + redAlert + '</a></td>';
+        } else {
+            days = '<td class="p-sm-1 today"><a class="btn border-secondary w-100" style="color: #59CAB8" data-toggle="modal" data-target="#exampleModalCenter"  data-date="' + dataDay + '" >' + d + redAlert + '</a></td>';
+        }
+
+        return days;
+    }*/
 
 // **************************************************************************
 
@@ -139,9 +144,9 @@ Cal.prototype.showMonth = function(y, m) {
     var chkY = chk.getFullYear();
     var chkM = chk.getMonth();
     if (chkY == this.currYear && chkM == this.currMonth && i == this.currDay) {
-      html += '<td class="p-sm-1"><a class="btn text-white w-100" style="background: #59CAB8" data-toggle="modal" data-target="#exampleModalCenter">' + i + '</a></td>';
+      html += '<td class="p-sm-1"><a class="btn text-white w-100" style="background: #59CAB8" data-toggle="modal" data-target="#exampleModalCenter" >' + i + '</a></td>';
     } else {
-      html += '<td class="p-sm-1 today"><a class="btn border-secondary w-100" style="color: #59CAB8" data-toggle="modal" data-target="#exampleModalCenter">' + i + '</a></td>';
+      html += '<td class="p-sm-1 today"><a class="btn border-secondary w-100" style="color: #59CAB8" data-toggle="modal" data-target="#exampleModalCenter" >' + i + '</a></td>';
     }
     // If Saturday, closes the row
     if ( dow == 6 ) {

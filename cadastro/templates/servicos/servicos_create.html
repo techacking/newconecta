@@ -3,20 +3,31 @@
 {% load static %}
 {% block main %}
 
-    <section class="container mt-5">
-
-        <div class="container mb-5">
-            <div class="rounded border shadow p-4 offset-lg-3 col-lg-5 bg-white">
-                <h3>Novo tipo de serviço</h3>
-                <form class="" action="" method="POST">
-                    {% csrf_token %}
-                    {{ form|bootstrap }}
-                    <button class="btn btn-success" type="submit">Salvar</button>
-                </form>
+    <section class="container mt-5 ">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card shadow mb-5 bg-white rounded border-secondary">
+                    <div class="card-header">
+                        <strong>Novo Serviço</strong></div>
+                    <div class="card-body">
+                        <form class="" action="" method="POST">
+                            {% csrf_token %}
+                            {{ form|bootstrap }}
+                            <a href="{% url 'servicos_list' %}" style="text-decoration: none; font-family: 'Nunito Sans', sans-serif;">
+                                <button class="btn btn-sm btn-danger col-md-3 offset-md-1 fa fa-ban" type="button">
+                                    Cancelar
+                                </button>
+                            </a>
+                            <button class="btn btn-sm btn-primary col-md-3 offset-md-4" type="submit">
+                                <i class="fa fa-dot-circle-o" data-toggle="modal"></i>
+                                Salvar
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <a class="btn btn-outline-secondary mt-3 offset-md-7" href="{% url 'cadastro' %}">Voltar</a>
         </div>
-
     </section>
 
 
