@@ -3,7 +3,7 @@ from .views import *
 
 urlpatterns = [
 
-    path('', agenda, name='agenda'),
+    path('', agenda.as_view(), name='agenda'),
 
     path('entre_list/', entreList.as_view(), name='entre_list'),
     path('entre_create/', entreCreate.as_view(), name='entre_create'),

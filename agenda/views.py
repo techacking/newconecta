@@ -1,5 +1,6 @@
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views import View
 from django.urls import reverse_lazy
 from .models import *
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -8,25 +9,19 @@ from django.contrib.auth.decorators import login_required
 from .models import *
 import json
 
-@login_required
-def agenda(request):
-    eventos = Entre.objects.all()
-    eventos_list = []
-    for evento in eventos:
-        evento_dict = {
-            "title": str(evento.name),
-            "startdate": str(evento.date),
-            "enddate": str(evento.date),
-            "id": str(evento.id),
-        }
-        eventos_list.append(evento_dict)
-    return render(request, 'agenda.html', {'eventosList': json.dumps(eventos_list)})
+
 
 class Autenticaagenda(LoginRequiredMixin):
     login_url = '/login/'
     redirect_field_name = 'redirect_to'
 
+class agenda(Autenticaagenda, ListView):
+    model = Entre
+    template_name = 'entre/agenda.html'
+
 # ----------------------  LIST ----------------------------
+
+
 
 class entreList(Autenticaagenda, ListView):
     model = Entre
