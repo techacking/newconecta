@@ -48,15 +48,15 @@
               {% for Entre in object_list %}
                       <div class="row">
                         <div class="col-sm">
-                            {{ Entre.name }}
-                        </div>
-                        <div class="col-sm">
-                            {{ Entre.date }}
+                            {{ Entre.name|upper }}
                         </div>
                       </div>
-                      <div class="row">
+                      <div class="row mt-2">
                           <div class="col-sm">
                               {{ Entre.descricao }}
+                          </div>
+                          <div class="col-sm">
+                                {{ Entre.date }}
                           </div>
                       </div>
                   <hr>
