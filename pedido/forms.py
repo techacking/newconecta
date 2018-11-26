@@ -27,3 +27,11 @@ class OrcamentoForm(ModelForm):
 
 
         ]
+
+class TabelaprecoForm(ModelForm):
+    class Meta:
+        model = Tabelapreco
+        fields = [
+
+
+        ]
