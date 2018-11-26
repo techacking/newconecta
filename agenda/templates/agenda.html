@@ -39,7 +39,7 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Eventos</h5>
+            <h5 class="modal-title" id="exampleModalCenterTitle">Eventos do dia</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -48,8 +48,9 @@
             ...
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-            <button type="button" class="btn btn-primary">Novo</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+              <a href="{% url 'entre_create' %}" class="btn btn-primary mr-5">Novo</a>
+              <a href="{% url 'orcamento_create' %}" class="ml-5 btn btn-info text-white">Orçamento</a>
           </div>
         </div>
       </div>

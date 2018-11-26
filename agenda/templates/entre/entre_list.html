@@ -17,16 +17,13 @@
                 <thead>
                     <tr>
                         <th>
-                            Cliente
+                            Evento
                         </th>
                         <th>
                             Data do evento
                         </th>
                         <th>
-                            Sala
-                        </th>
-                        <th>
-                            Montagem
+                            Descricao
                         </th>
                         <th>
 
@@ -34,24 +31,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for Orcamento in object_list %}
+                    {% for Entre in object_list %}
                             <tr>
                                 <td>
-                                    {{ Orcamento.cliente }}
+                                    {{ Entre.name }}
                                 </td>
                                 <td>
-                                    {{ Orcamento.dataevento }}
+                                    {{ Entre.date }}
                                 </td>
                                 <td>
-                                    {{ Orcamento.sala }}
-                                </td>
-                                <td>
-                                    {{ Orcamento.montagem }}
+                                    {{ Entre.descricao }}
                                 </td>
                                 <td>
                                     <div>
-                                        <a href="{% url 'orcamento_update' Orcamento.id %}">Alterar</a>
-                                        <a href="{% url 'orcamento_delete' Orcamento.id %}">Deletar</a>
+                                        <a href="{% url 'entre_update' Entre.id %}">Alterar</a>
+                                        <a href="{% url 'entre_delete' Entre.id %}">Deletar</a>
                                     </div>
                                 </td>
                             </tr>
@@ -60,8 +54,8 @@
             </table>
         </div>
         <div class="mt-4 offset-md-10">
-            <a class="btn btn-success shadow" href="{% url 'orcamento_create' %}">Novo</a>
-            <a class="btn btn-secondary shadow" href="{% url 'pedido' %}">Volta</a>
+            <a class="btn btn-success shadow" href="{% url 'entre_create' %}">Novo</a>
+            <a class="btn btn-secondary shadow" href="{% url 'agenda' %}">Volta</a>
         </div>
     </section>
 

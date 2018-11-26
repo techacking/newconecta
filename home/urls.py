@@ -10,6 +10,6 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
 
-    path('', home, name='home'),
+    path('', Home.as_view(), name='home')
 
 ]
