@@ -1,4 +1,6 @@
 -r requirements-dev.txt
 gunicorn
 psycopg2
+django-bootstrap-datepicker-plus
+django-bootstrap4
 
