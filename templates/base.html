@@ -36,6 +36,7 @@
         <link rel="stylesheet" href="{% static 'css/fullcalendar.print.min.css' %}"  media='print' />
         <script src="{% static 'js/agenda2.js' %}"></script>
 
+
     </head>
     <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show" style="background-color: #F5F5F5">
         <header class="app-header navbar">
@@ -83,39 +84,49 @@
                                 <i class="nav-icon icon-drop"></i> Agenda</a>
                         </li>
                         <li class="nav-item nav-dropdown">
-                            <a class="nav-link" href="{% url 'cadastro' %}">
-                                <i class="nav-icon icon-puzzle"></i> Cadastros </a>
+                            <a class="nav-link" href="{% url 'cliente_list' %}">
+                                <i class="nav-icon icon-puzzle"></i> Clientes </a>
                             <ul class="nav-dropdown-items">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'cliente_list' %}">
-                                        <i class="nav-icon"></i> Clientes </a>
+                                    <a class="nav-link" href="{% url 'endereco_list' %}">
+                                        <i class="nav-icon"></i> Endereço </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'contato_list' %}">
+                                        <i class="nav-icon"></i> Contato </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link" href="{% url 'sala_list' %}">
+                                <i class="nav-icon icon-puzzle"></i> Sala </a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'tiposala_list' %}">
+                                        <i class="nav-icon"></i> Tipo sala </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'servicos_list' %}">
                                         <i class="nav-icon"></i> Servicos </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'sala_list' %}">
-                                        <i class="nav-icon"></i> Salas </a>
-                                </li>
                             </ul>
                         </li>
                         <li class="nav-item nav-dropdown">
-                            <a class="nav-link nav-dropdown-toggle" href=#>
-                                <i class="nav-icon icon-cursor"></i> Controle </a>
+                            <a class="nav-link" href="{% url 'orcamento_list' %}">
+                                <i class="nav-icon icon-puzzle"></i> Orçamento </a>
                             <ul class="nav-dropdown-items">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'pedido' %}">
+                                    <a class="nav-link" href="{% url 'pedido_list' %}">
                                         <i class="nav-icon"></i> Pedidos </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'pedido' %}">
-                                        <i class="nav-icon"></i> Orçamentos </a>
+                                    <a class="nav-link" href="{% url 'pedido_list' %}">
+                                        <i class="nav-icon"></i> Tabela de Valor </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="#">
                                 <i class="nav-icon icon-pie-chart"></i> Financeiro</a>
                         </li>
                         <li class="nav-item nav-dropdown">

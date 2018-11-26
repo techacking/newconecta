@@ -2,14 +2,141 @@
 {% load bootstrap %}
 
 {% block main %}
-
     <div class="container mt-3">
-        <iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiZjVjYjQyNjYtM2RiMC00Y2I2LWJjOTItNjgxMTYwOTFkNmQ3IiwidCI6ImFjNTNmYTQ1LWVkMzYtNGM1My1iMTRlLWRjOWM1ODM5NzYwYyJ9" frameborder="0" allowFullScreen="true"></iframe>
+        <section>
+            <div class="card-group mb-4 shadow mb-5 bg-white rounded">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="h1 text-muted text-right mb-4">
+                            <i class="icon-user-follow"></i>
+                        </div>
+                    <div class="text-value">Clientes</div>
+                        <small class="text-muted text-uppercase font-weight-bold">Cliente cadastrados na Base</small>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-block text-muted d-flex justify-content-between align-items-center" href="{% url 'cliente_list' %}">
+                            <span class="small font-weight-bold">Lista</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="h1 text-muted text-right mb-4">
+                            <i class="icon-people"></i>
+                        </div>
+                    <div class="text-value">Perfis</div>
+                        <small class="text-muted text-uppercase font-weight-bold">Perfis de acesso ao sistemas</small>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-block text-muted d-flex justify-content-between align-items-center" href="{% url 'perfil_list' %}">
+                            <span class="small font-weight-bold">Lista</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="h1 text-muted text-right mb-4">
+                            <i class="icon-pencil"></i>
+                        </div>
+                    <div class="text-value">Usuarios</div>
+                        <small class="text-muted text-uppercase font-weight-bold">Usuários de acesso ao sistemas</small>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-block text-muted d-flex justify-content-between align-items-center" href="{% url 'usuario_list' %}">
+                            <span class="small font-weight-bold">Lista</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="h1 text-muted text-right mb-4">
+                            <i class="icon-note"></i>
+                        </div>
+                    <div class="text-value">Sala</div>
+                        <small class="text-muted text-uppercase font-weight-bold">Salas cadastradas no sistema</small>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-block text-muted d-flex justify-content-between align-items-center" href="{% url 'sala_list' %}">
+                            <span class="small font-weight-bold">Lista</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="h1 text-muted text-right mb-4">
+                            <i class="icon-note"></i>
+                        </div>
+                    <div class="text-value">Servicos</div>
+                        <small class="text-muted text-uppercase font-weight-bold">Cadastro de Servicos</small>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn-block text-muted d-flex justify-content-between align-items-center" href="{% url 'servicos_list' %}">
+                            <span class="small font-weight-bold">Lista</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+          <div class="animated fadeIn">
+            <div class="row">
+              <div class="col-sm-6 col-lg-3">
+                <div class="card text-white bg-primary">
+                  <div class="card-body pb-0">
+                    <div class="btn-group float-right">
+
+                    </div>
+                    <div class="text-value">{{ cliente }}</div>
+                    <div>Clientes Cadastrados</div>
+                  </div>
+                  <div class="chart-wrapper mt-3 mx-3" style="height:50px;">
+                    <canvas class="chart" id="" height="70"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+              <div class="col-sm-6 col-lg-3">
+                <div class="card text-white bg-info">
+                  <div class="card-body pb-0">
+                    <div class="text-value">{{ perfil }}</div>
+                    <div>Perfis cadastrados</div>
+                  </div>
+                  <div class="chart-wrapper mt-3 mx-3" style="height:50px;">
+                    <canvas class="chart" id="" height="70"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+              <div class="col-sm-6 col-lg-3">
+                <div class="card text-white bg-warning">
+                  <div class="card-body pb-0">
+                      <div class="text-value">{{ usuario }}</div>
+                    <div>Usuarios cadastrados</div>
+                  </div>
+                  <div class="chart-wrapper mt-3" style="height:50px;">
+                    <canvas class="chart" id="" height="70"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+              <div class="col-sm-6 col-lg-3">
+                <div class="card text-white bg-danger">
+                  <div class="card-body pb-0">
+                    <div class="text-value">{{ tiposala }}</div>
+                    <div>Tipos de sala do Sistema</div>
+                  </div>
+                  <div class="chart-wrapper mt-3 mx-3" style="height:50px;">
+                    <canvas class="chart" id="" height="0"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-->
+            </div>
+        </section>
     </div>
-
-    <div>
-
-    </div>
-
 {% endblock %}
 

@@ -1,16 +1,21 @@
 from django.db import models
 from django.core.mail import send_mail
+from home.managers import *
 
 # Create your models here.
 
 class TipoSala(models.Model):
     tipo = models.CharField(max_length=15)
 
+    objects = TiposalaManager()
+
     def __str__(self):
         return self.tipo
 
 class Perfil(models.Model):
     perfil = models.CharField(max_length=50)
+
+    objects = PerfilManager()
 
     def __str__(self):
         return self.perfil
@@ -22,6 +27,8 @@ class Usuario(models.Model):
     senha = models.CharField(max_length=50)
     perfil = models.ForeignKey(Perfil, blank=False, null=False, on_delete=models.CASCADE)
 
+    objects = UsuariosManager()
+
     def __str__(self):
         return self.nome
 
@@ -30,6 +37,8 @@ class Cliente(models.Model):
     cnpj = models.CharField('CNPJ', max_length=30)
     inscricaoestadual = models.CharField('Inscrição Estadual', max_length=30)
     email = models.EmailField('E-mail para contato', max_length=254, blank=False)
+
+    objects = ClienteManager()
 
     def __str__(self):
         return self.nome

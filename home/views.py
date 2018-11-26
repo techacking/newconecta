@@ -20,4 +20,8 @@ class Home(Autentica, View):
     def get(self, request):
         data = {}
         data['total'] = Orcamento.objects.todosorcamento()
+        data['cliente'] = Cliente.objects.todoscliente()
+        data['usuario'] = Usuario.objects.todosusuario()
+        data['perfil'] = Perfil.objects.todosperfil()
+        data['tiposala'] = TipoSala.objects.todostipos()
         return render(request, 'home/home.html', data)
